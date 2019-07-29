@@ -38,15 +38,16 @@ public final class GeoServiceProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020geoservice.proto\022\ngeoservice\"\235\001\n\020InPol" +
+      "\n\020geoservice.proto\022\ngeoservice\"\250\001\n\020InPol" +
       "ygonRequest\0221\n\005point\030\001 \001(\0132\".geoservice." +
       "InPolygonRequest.Point\0223\n\007polygon\030\002 \003(\0132" +
-      "\".geoservice.InPolygonRequest.Point\032!\n\005P" +
-      "oint\022\013\n\003lat\030\001 \001(\002\022\013\n\003lng\030\002 \001(\002\" \n\016InPoly" +
-      "gonReply\022\016\n\006result\030\001 \001(\0102N\n\003Geo\022G\n\tInPol" +
-      "ygon\022\034.geoservice.InPolygonRequest\032\032.geo" +
-      "service.InPolygonReply\"\000B-\n\022io.grpc.geos" +
-      "erviceB\017GeoServiceProtoP\001\242\002\003GSPb\006proto3"
+      "\".geoservice.InPolygonRequest.Point\032,\n\005P" +
+      "oint\022\020\n\010latitude\030\001 \001(\002\022\021\n\tlongitude\030\002 \001(" +
+      "\002\" \n\016InPolygonReply\022\016\n\006result\030\001 \001(\0102N\n\003G" +
+      "eo\022G\n\tInPolygon\022\034.geoservice.InPolygonRe" +
+      "quest\032\032.geoservice.InPolygonReply\"\000B-\n\022i" +
+      "o.grpc.geoserviceB\017GeoServiceProtoP\001\242\002\003G" +
+      "SPb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -63,7 +64,7 @@ public final class GeoServiceProto {
     internal_static_geoservice_InPolygonRequest_Point_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_geoservice_InPolygonRequest_Point_descriptor,
-        new java.lang.String[] { "Lat", "Lng", });
+        new java.lang.String[] { "Latitude", "Longitude", });
     internal_static_geoservice_InPolygonReply_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_geoservice_InPolygonReply_fieldAccessorTable = new
