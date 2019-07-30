@@ -109,14 +109,14 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>float latitude = 1;</code>
+     * <code>float lat = 1;</code>
      */
-    float getLatitude();
+    float getLat();
 
     /**
-     * <code>float longitude = 2;</code>
+     * <code>float lng = 2;</code>
      */
-    float getLongitude();
+    float getLng();
   }
   /**
    * Protobuf type {@code geoservice.InPolygonRequest.Point}
@@ -159,12 +159,12 @@ private static final long serialVersionUID = 0L;
               break;
             case 13: {
 
-              latitude_ = input.readFloat();
+              lat_ = input.readFloat();
               break;
             }
             case 21: {
 
-              longitude_ = input.readFloat();
+              lng_ = input.readFloat();
               break;
             }
             default: {
@@ -199,22 +199,22 @@ private static final long serialVersionUID = 0L;
               io.grpc.geoservice.InPolygonRequest.Point.class, io.grpc.geoservice.InPolygonRequest.Point.Builder.class);
     }
 
-    public static final int LATITUDE_FIELD_NUMBER = 1;
-    private float latitude_;
+    public static final int LAT_FIELD_NUMBER = 1;
+    private float lat_;
     /**
-     * <code>float latitude = 1;</code>
+     * <code>float lat = 1;</code>
      */
-    public float getLatitude() {
-      return latitude_;
+    public float getLat() {
+      return lat_;
     }
 
-    public static final int LONGITUDE_FIELD_NUMBER = 2;
-    private float longitude_;
+    public static final int LNG_FIELD_NUMBER = 2;
+    private float lng_;
     /**
-     * <code>float longitude = 2;</code>
+     * <code>float lng = 2;</code>
      */
-    public float getLongitude() {
-      return longitude_;
+    public float getLng() {
+      return lng_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -231,11 +231,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (latitude_ != 0F) {
-        output.writeFloat(1, latitude_);
+      if (lat_ != 0F) {
+        output.writeFloat(1, lat_);
       }
-      if (longitude_ != 0F) {
-        output.writeFloat(2, longitude_);
+      if (lng_ != 0F) {
+        output.writeFloat(2, lng_);
       }
       unknownFields.writeTo(output);
     }
@@ -246,13 +246,13 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (latitude_ != 0F) {
+      if (lat_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(1, latitude_);
+          .computeFloatSize(1, lat_);
       }
-      if (longitude_ != 0F) {
+      if (lng_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, longitude_);
+          .computeFloatSize(2, lng_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -269,12 +269,12 @@ private static final long serialVersionUID = 0L;
       }
       io.grpc.geoservice.InPolygonRequest.Point other = (io.grpc.geoservice.InPolygonRequest.Point) obj;
 
-      if (java.lang.Float.floatToIntBits(getLatitude())
+      if (java.lang.Float.floatToIntBits(getLat())
           != java.lang.Float.floatToIntBits(
-              other.getLatitude())) return false;
-      if (java.lang.Float.floatToIntBits(getLongitude())
+              other.getLat())) return false;
+      if (java.lang.Float.floatToIntBits(getLng())
           != java.lang.Float.floatToIntBits(
-              other.getLongitude())) return false;
+              other.getLng())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -286,12 +286,12 @@ private static final long serialVersionUID = 0L;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
+      hash = (37 * hash) + LAT_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getLatitude());
-      hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
+          getLat());
+      hash = (37 * hash) + LNG_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getLongitude());
+          getLng());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -425,9 +425,9 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        latitude_ = 0F;
+        lat_ = 0F;
 
-        longitude_ = 0F;
+        lng_ = 0F;
 
         return this;
       }
@@ -455,8 +455,8 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public io.grpc.geoservice.InPolygonRequest.Point buildPartial() {
         io.grpc.geoservice.InPolygonRequest.Point result = new io.grpc.geoservice.InPolygonRequest.Point(this);
-        result.latitude_ = latitude_;
-        result.longitude_ = longitude_;
+        result.lat_ = lat_;
+        result.lng_ = lng_;
         onBuilt();
         return result;
       }
@@ -505,11 +505,11 @@ private static final long serialVersionUID = 0L;
 
       public Builder mergeFrom(io.grpc.geoservice.InPolygonRequest.Point other) {
         if (other == io.grpc.geoservice.InPolygonRequest.Point.getDefaultInstance()) return this;
-        if (other.getLatitude() != 0F) {
-          setLatitude(other.getLatitude());
+        if (other.getLat() != 0F) {
+          setLat(other.getLat());
         }
-        if (other.getLongitude() != 0F) {
-          setLongitude(other.getLongitude());
+        if (other.getLng() != 0F) {
+          setLng(other.getLng());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -540,54 +540,54 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      private float latitude_ ;
+      private float lat_ ;
       /**
-       * <code>float latitude = 1;</code>
+       * <code>float lat = 1;</code>
        */
-      public float getLatitude() {
-        return latitude_;
+      public float getLat() {
+        return lat_;
       }
       /**
-       * <code>float latitude = 1;</code>
+       * <code>float lat = 1;</code>
        */
-      public Builder setLatitude(float value) {
+      public Builder setLat(float value) {
         
-        latitude_ = value;
+        lat_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>float latitude = 1;</code>
+       * <code>float lat = 1;</code>
        */
-      public Builder clearLatitude() {
+      public Builder clearLat() {
         
-        latitude_ = 0F;
+        lat_ = 0F;
         onChanged();
         return this;
       }
 
-      private float longitude_ ;
+      private float lng_ ;
       /**
-       * <code>float longitude = 2;</code>
+       * <code>float lng = 2;</code>
        */
-      public float getLongitude() {
-        return longitude_;
+      public float getLng() {
+        return lng_;
       }
       /**
-       * <code>float longitude = 2;</code>
+       * <code>float lng = 2;</code>
        */
-      public Builder setLongitude(float value) {
+      public Builder setLng(float value) {
         
-        longitude_ = value;
+        lng_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>float longitude = 2;</code>
+       * <code>float lng = 2;</code>
        */
-      public Builder clearLongitude() {
+      public Builder clearLng() {
         
-        longitude_ = 0F;
+        lng_ = 0F;
         onChanged();
         return this;
       }

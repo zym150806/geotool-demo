@@ -15,7 +15,7 @@ public class GeoService extends GeoGrpc.GeoImplBase {
         List<InPolygonRequest.Point> polygonList = request.getPolygonList();
         for (int i=0; i<polygonList.size(); i++) {
             InPolygonRequest.Point polygon = polygonList.get(i);
-            polygon.getLatitude();
+            polygon.getLat();
         }
 
     }
