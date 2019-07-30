@@ -24,13 +24,6 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new InPolygonRequest();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -68,9 +61,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               polygon_ = new java.util.ArrayList<io.grpc.geoservice.InPolygonRequest.Point>();
-              mutable_bitField0_ |= 0x00000001;
+              mutable_bitField0_ |= 0x00000002;
             }
             polygon_.add(
                 input.readMessage(io.grpc.geoservice.InPolygonRequest.Point.parser(), extensionRegistry));
@@ -91,7 +84,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         polygon_ = java.util.Collections.unmodifiableList(polygon_);
       }
       this.unknownFields = unknownFields.build();
@@ -141,13 +134,6 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Point();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -160,6 +146,7 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -657,6 +644,7 @@ private static final long serialVersionUID = 0L;
 
   }
 
+  private int bitField0_;
   public static final int POINT_FIELD_NUMBER = 1;
   private io.grpc.geoservice.InPolygonRequest.Point point_;
   /**
@@ -937,7 +925,7 @@ private static final long serialVersionUID = 0L;
       }
       if (polygonBuilder_ == null) {
         polygon_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         polygonBuilder_.clear();
       }
@@ -968,20 +956,22 @@ private static final long serialVersionUID = 0L;
     public io.grpc.geoservice.InPolygonRequest buildPartial() {
       io.grpc.geoservice.InPolygonRequest result = new io.grpc.geoservice.InPolygonRequest(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (pointBuilder_ == null) {
         result.point_ = point_;
       } else {
         result.point_ = pointBuilder_.build();
       }
       if (polygonBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           polygon_ = java.util.Collections.unmodifiableList(polygon_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.polygon_ = polygon_;
       } else {
         result.polygon_ = polygonBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1037,7 +1027,7 @@ private static final long serialVersionUID = 0L;
         if (!other.polygon_.isEmpty()) {
           if (polygon_.isEmpty()) {
             polygon_ = other.polygon_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensurePolygonIsMutable();
             polygon_.addAll(other.polygon_);
@@ -1050,7 +1040,7 @@ private static final long serialVersionUID = 0L;
             polygonBuilder_.dispose();
             polygonBuilder_ = null;
             polygon_ = other.polygon_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             polygonBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getPolygonFieldBuilder() : null;
@@ -1209,9 +1199,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<io.grpc.geoservice.InPolygonRequest.Point> polygon_ =
       java.util.Collections.emptyList();
     private void ensurePolygonIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         polygon_ = new java.util.ArrayList<io.grpc.geoservice.InPolygonRequest.Point>(polygon_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -1361,7 +1351,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearPolygon() {
       if (polygonBuilder_ == null) {
         polygon_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         polygonBuilder_.clear();
@@ -1438,7 +1428,7 @@ private static final long serialVersionUID = 0L;
         polygonBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.grpc.geoservice.InPolygonRequest.Point, io.grpc.geoservice.InPolygonRequest.Point.Builder, io.grpc.geoservice.InPolygonRequest.PointOrBuilder>(
                 polygon_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         polygon_ = null;

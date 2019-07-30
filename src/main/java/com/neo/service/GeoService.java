@@ -1,6 +1,5 @@
 package com.neo.service;
 
-import io.grpc.ServerServiceDefinition;
 import io.grpc.geoservice.GeoGrpc;
 import io.grpc.geoservice.InPolygonReply;
 import io.grpc.geoservice.InPolygonRequest;
@@ -14,7 +13,10 @@ public class GeoService extends GeoGrpc.GeoImplBase {
     @Override
     public void inPolygon(InPolygonRequest request, StreamObserver<InPolygonReply> responseObserver) {
         List<InPolygonRequest.Point> polygonList = request.getPolygonList();
-
+        for (int i=0; i<polygonList.size(); i++) {
+            InPolygonRequest.Point polygon = polygonList.get(i);
+            polygon.getLatitude();
+        }
 
     }
 
