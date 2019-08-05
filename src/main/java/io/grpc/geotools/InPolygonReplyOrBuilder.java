@@ -11,4 +11,19 @@ public interface InPolygonReplyOrBuilder extends
    * <code>bool result = 1;</code>
    */
   boolean getResult();
+
+  /**
+   * <code>int32 code = 2;</code>
+   */
+  int getCode();
+
+  /**
+   * <code>string msg = 3;</code>
+   */
+  java.lang.String getMsg();
+  /**
+   * <code>string msg = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getMsgBytes();
 }

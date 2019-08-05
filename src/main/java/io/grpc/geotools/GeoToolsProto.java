@@ -42,11 +42,12 @@ public final class GeoToolsProto {
       "onRequest\0221\n\005point\030\001 \001(\0132\".geoservice.In" +
       "PolygonRequest.Point\0223\n\007polygon\030\002 \003(\0132\"." +
       "geoservice.InPolygonRequest.Point\032!\n\005Poi" +
-      "nt\022\013\n\003lat\030\001 \001(\002\022\013\n\003lng\030\002 \001(\002\" \n\016InPolygo" +
-      "nReply\022\016\n\006result\030\001 \001(\0102S\n\010GeoTools\022G\n\tIn" +
-      "Polygon\022\034.geoservice.InPolygonRequest\032\032." +
-      "geoservice.InPolygonReply\"\000B)\n\020io.grpc.g" +
-      "eotoolsB\rGeoToolsProtoP\001\242\002\003GTPb\006proto3"
+      "nt\022\013\n\003lat\030\001 \001(\002\022\013\n\003lng\030\002 \001(\002\";\n\016InPolygo" +
+      "nReply\022\016\n\006result\030\001 \001(\010\022\014\n\004code\030\002 \001(\005\022\013\n\003" +
+      "msg\030\003 \001(\t2S\n\010GeoTools\022G\n\tInPolygon\022\034.geo" +
+      "service.InPolygonRequest\032\032.geoservice.In" +
+      "PolygonReply\"\000B)\n\020io.grpc.geotoolsB\rGeoT" +
+      "oolsProtoP\001\242\002\003GTPb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -77,7 +78,7 @@ public final class GeoToolsProto {
     internal_static_geoservice_InPolygonReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_geoservice_InPolygonReply_descriptor,
-        new java.lang.String[] { "Result", });
+        new java.lang.String[] { "Result", "Code", "Msg", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

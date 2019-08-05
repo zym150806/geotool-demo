@@ -23,22 +23,25 @@ package geoservice;
 
 // The greeting service definition.
 service GeoTools {
-  // Sends a greeting
-  rpc InPolygon (InPolygonRequest) returns (InPolygonReply) {}
+    // Sends a greeting
+    rpc InPolygon (InPolygonRequest) returns (InPolygonReply) {
+    }
 }
 
 // The request message containing the user's name.
 message InPolygonRequest {
-  message Point {
-    float lat = 1;
-    float lng = 2;
-  }
+    message Point {
+        float lat = 1;
+        float lng = 2;
+    }
 
-  Point point = 1;
-  repeated Point polygon = 2;
+    Point point = 1;
+    repeated Point polygon = 2;
 }
 
 // The response message containing the greetings
 message InPolygonReply {
-  bool result = 1;
+    bool result = 1;
+    int32 code = 2;
+    string msg = 3;
 }

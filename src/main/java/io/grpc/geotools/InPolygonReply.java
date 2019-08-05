@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private InPolygonReply() {
+    msg_ = "";
   }
 
   @java.lang.Override
@@ -49,6 +50,17 @@ private static final long serialVersionUID = 0L;
           case 8: {
 
             result_ = input.readBool();
+            break;
+          }
+          case 16: {
+
+            code_ = input.readInt32();
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            msg_ = s;
             break;
           }
           default: {
@@ -92,6 +104,49 @@ private static final long serialVersionUID = 0L;
     return result_;
   }
 
+  public static final int CODE_FIELD_NUMBER = 2;
+  private int code_;
+  /**
+   * <code>int32 code = 2;</code>
+   */
+  public int getCode() {
+    return code_;
+  }
+
+  public static final int MSG_FIELD_NUMBER = 3;
+  private volatile java.lang.Object msg_;
+  /**
+   * <code>string msg = 3;</code>
+   */
+  public java.lang.String getMsg() {
+    java.lang.Object ref = msg_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      msg_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string msg = 3;</code>
+   */
+  public com.google.protobuf.ByteString
+      getMsgBytes() {
+    java.lang.Object ref = msg_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      msg_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -109,6 +164,12 @@ private static final long serialVersionUID = 0L;
     if (result_ != false) {
       output.writeBool(1, result_);
     }
+    if (code_ != 0) {
+      output.writeInt32(2, code_);
+    }
+    if (!getMsgBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, msg_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -121,6 +182,13 @@ private static final long serialVersionUID = 0L;
     if (result_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(1, result_);
+    }
+    if (code_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(2, code_);
+    }
+    if (!getMsgBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, msg_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -139,6 +207,10 @@ private static final long serialVersionUID = 0L;
 
     if (getResult()
         != other.getResult()) return false;
+    if (getCode()
+        != other.getCode()) return false;
+    if (!getMsg()
+        .equals(other.getMsg())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -153,6 +225,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + RESULT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getResult());
+    hash = (37 * hash) + CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getCode();
+    hash = (37 * hash) + MSG_FIELD_NUMBER;
+    hash = (53 * hash) + getMsg().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -292,6 +368,10 @@ private static final long serialVersionUID = 0L;
       super.clear();
       result_ = false;
 
+      code_ = 0;
+
+      msg_ = "";
+
       return this;
     }
 
@@ -319,6 +399,8 @@ private static final long serialVersionUID = 0L;
     public io.grpc.geotools.InPolygonReply buildPartial() {
       io.grpc.geotools.InPolygonReply result = new io.grpc.geotools.InPolygonReply(this);
       result.result_ = result_;
+      result.code_ = code_;
+      result.msg_ = msg_;
       onBuilt();
       return result;
     }
@@ -369,6 +451,13 @@ private static final long serialVersionUID = 0L;
       if (other == io.grpc.geotools.InPolygonReply.getDefaultInstance()) return this;
       if (other.getResult() != false) {
         setResult(other.getResult());
+      }
+      if (other.getCode() != 0) {
+        setCode(other.getCode());
+      }
+      if (!other.getMsg().isEmpty()) {
+        msg_ = other.msg_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -421,6 +510,101 @@ private static final long serialVersionUID = 0L;
     public Builder clearResult() {
       
       result_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int code_ ;
+    /**
+     * <code>int32 code = 2;</code>
+     */
+    public int getCode() {
+      return code_;
+    }
+    /**
+     * <code>int32 code = 2;</code>
+     */
+    public Builder setCode(int value) {
+      
+      code_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 code = 2;</code>
+     */
+    public Builder clearCode() {
+      
+      code_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object msg_ = "";
+    /**
+     * <code>string msg = 3;</code>
+     */
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        msg_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string msg = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMsgBytes() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        msg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string msg = 3;</code>
+     */
+    public Builder setMsg(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      msg_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string msg = 3;</code>
+     */
+    public Builder clearMsg() {
+      
+      msg_ = getDefaultInstance().getMsg();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string msg = 3;</code>
+     */
+    public Builder setMsgBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      msg_ = value;
       onChanged();
       return this;
     }
